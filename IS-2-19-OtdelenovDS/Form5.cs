@@ -29,6 +29,7 @@ namespace IS_2_19_OtdelenovDS
                 DataSet dataset = new DataSet();
                 IDataAdapter.Fill(dataset);
                 dataGridView1.DataSource = dataset.Tables[0];
+                dataGridView1.CurrentCell = dataGridView1[0, dataGridView1.Rows.Count - 2];
                 conn.Close();
             }
             catch (Exception ex)
@@ -52,15 +53,36 @@ namespace IS_2_19_OtdelenovDS
             }
             catch
             {
-                MessageBox.Show("непофиксил");
+                MessageBox.Show("Произошла ошибка");
             }
             finally
             {
                 conn.Close();
                 if (perem != 0)
                 {
-                    MessageBox.Show("пофиксил");
+                    MessageBox.Show("Данные были внесены в таблицу");
                 }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(Connect2.GetDBConnection());
+            string sqlZapros = $"SELECT idStud, fioStud, datetimeStud FROM t_PraktStud";
+            try
+            {
+                conn.Open();
+                MySqlDataAdapter IDataAdapter = new MySqlDataAdapter(sqlZapros, conn);
+                DataSet dataset = new DataSet();
+                IDataAdapter.Fill(dataset);
+                dataGridView1.DataSource = dataset.Tables[0];
+                dataGridView1.CurrentCell = dataGridView1[0, dataGridView1.Rows.Count - 2];
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                conn.Close();
             }
         }
     }
