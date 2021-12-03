@@ -27,7 +27,7 @@ namespace IS_2_19_OtdelenovDS
                 MySqlDataAdapter IDataAdapter = new MySqlDataAdapter(sqlZapros, conn);//создаётся экземпляр класса MySqlConnection, принимаются значения переменной и экземпляра класса
                 DataSet dataset = new DataSet();//создаётся экземпляр класса DataSet
                 IDataAdapter.Fill(dataset);//Заполнение
-                dataGridView1.DataSource = dataset.Tables[0];//И это тоже
+                dataGridView1.DataSource = dataset.Tables[0];
                 conn.Close();//Закрывается соединение с бд
             }
             catch (Exception ex)
