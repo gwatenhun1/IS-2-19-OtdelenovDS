@@ -30,9 +30,9 @@ namespace IS_2_19_OtdelenovDS
                 dataGridView1.DataSource = dataset.Tables[0];//И это тоже
                 conn.Close();//Закрывается соединение с бд
             }
-            catch (Exception oshibka)
+            catch (Exception ex)
             {
-                MessageBox.Show("Подключение разорвано: " + oshibka);
+                MessageBox.Show("Подключение разорвано: " + ex);
                 conn.Close();//Закрывается соединение с бд
             }
         }
