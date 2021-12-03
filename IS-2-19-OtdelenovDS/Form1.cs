@@ -112,10 +112,10 @@ namespace IS_2_19_OtdelenovDS
         {
             string cena = Convert.ToString(textBox1.Text);
             string god_vipuska = Convert.ToString(textBox2.Text);
-            string chastota = Convert.ToString(textBox4.Text);
+            string chastota = Convert.ToString(textBox3.Text);
             string pamyat = Convert.ToString(textBox7.Text);
             string proizvod = Convert.ToString(textBox8.Text);
-            string articul = Convert.ToString(textBox3.Text);
+            string articul = Convert.ToString(textBox4.Text);
             videocart video = new videocart(cena, god_vipuska, chastota, pamyat, proizvod, articul);
             video.Display(listBox1);
         }
