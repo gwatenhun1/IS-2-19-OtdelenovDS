@@ -97,7 +97,7 @@ namespace IS_2_19_OtdelenovDS
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Menu";
-            this.Text = "Form1";
+            this.Text = "Menu";
             this.ResumeLayout(false);
 
         }
